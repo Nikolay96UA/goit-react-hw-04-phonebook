@@ -9,7 +9,7 @@ import css from '../components/App.module.css';
 
 export default function App() {
   const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem('contacts'))
+    () => JSON.parse(localStorage.getItem('contacts')) || []
   );
   const [filter, setFilter] = useState('');
 
